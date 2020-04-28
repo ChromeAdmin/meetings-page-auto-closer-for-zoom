@@ -1,4 +1,4 @@
-# zoom-meeting-page-auto-closer
+# zoom-meetings-page-auto-closer
 Automatically closes the page used to launch Zoom meetings
 
 ## Safest extension. No Permissions Needed.
