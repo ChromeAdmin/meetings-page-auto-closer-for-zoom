@@ -12,7 +12,7 @@ const cssClassName_CountdownText = `zoom-meeting-page-auto-closer-countdown-text
 const cssClassName_StopLink = `zoom-meeting-page-auto-closer-stop-link`;
 
 function countdownWithText(countdownTimeMs) {
-  if (true) {//Used for freezing the countdown to debugging styling
+  if (false) {//Used for freezing the countdown to debugging styling
     countdownTimeMs = 20 * 1000;
     clearInterval(intervalId);
   }
