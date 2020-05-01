@@ -1,15 +1,20 @@
-.zoom-meeting-page-auto-closer {
+.zoom-meeting-page-auto-closer-wrapper {
   position: absolute;
   margin: auto;
   left: 0;
   right: 0;
-  top: 105px;
+  /* top: 100px; */
+  top: 8px;
+  z-index: 777;
   width: fit-content;
   text-align: center;
-  font-size: 20px;
+  color: #3a3c3e;
+  font-size: 18px;
+  font-weight: 400;
 }
 
-.zoom-meeting-page-auto-closer:hover {
-  color: blue;
+.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-stop-link {
   cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
 }

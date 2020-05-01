@@ -4,23 +4,42 @@ function log(text) {
 
 log('loaded...');
 
-let timeTillCloseMs = 31000;
+let timeTillCloseMs = 21 * 1000;
+// timeTillCloseMs = 20 * 60000;
 const intervalRateMs = 1000;
-const cssClassName = `zoom-meeting-page-auto-closer`;
+const cssClassName_Wrapper = `zoom-meeting-page-auto-closer-wrapper`;
+const cssClassName_CountdownText = `zoom-meeting-page-auto-closer-countdown-text`;
+const cssClassName_StopLink = `zoom-meeting-page-auto-closer-stop-link`;
 
-function updateDivWithText(text) {
-  let div = document.documentElement.querySelector(`.${cssClassName}`);
-  if (!div) {
-    div = document.createElement('div');
-    div.classList.add(cssClassName);
-    document.body.appendChild(div);
-    div.onclick = () => {
-      log('Canceled the autoclose');
+function countdownWithText(countdownTimeMs) {
+  if (true) {//Used for freezing the countdown to debugging styling
+    countdownTimeMs = 20 * 1000;
+    clearInterval(intervalId);
+  }
+  
+  let wrapperEl = document.documentElement.querySelector(`.${cssClassName_Wrapper}`);
+  
+  if (!wrapperEl) { // Lazy init the element
+    wrapperEl = document.createElement('div');
+    wrapperEl.classList.add(cssClassName_Wrapper);
+    wrapperEl.innerHTML = `
+    <div>
+      <div class='${cssClassName_CountdownText}'></div>
+      <a class='${cssClassName_StopLink}'>cancel</a>
+    </div>
+    `;
+    document.body.appendChild(wrapperEl);
+    
+    let countdownEl = wrapperEl.querySelector(`.${cssClassName_StopLink}`);
+    countdownEl.onclick = () => {
+      log('Canceled the countdown');
       clearInterval(intervalId);
-      div.remove();
+      wrapperEl.remove();
     };
   }
-  div.innerText = text;
+
+  let countdownEl = wrapperEl.querySelector(`.${cssClassName_CountdownText}`);
+  countdownEl.innerText = `Closing page in ${Math.round(countdownTimeMs / 1000)} seconds`;
 }
 
 function getUrl() {
@@ -52,7 +71,7 @@ function countDownToClose() {
 
   if (!isMeetingStatusSuccess() && !isPostAttendee()) { return; }
 
-  updateDivWithText(`Closing page in ${Math.round(timeTillCloseMs / 1000)} seconds\n(click to cancel)`);
+  countdownWithText(timeTillCloseMs);
 
   if (timeTillCloseMs > 0) { return; }
 
