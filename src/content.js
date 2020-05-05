@@ -5,7 +5,6 @@ function log(text) {
 log('loaded...');
 
 let timeTillCloseMs = 21 * 1000;
-// timeTillCloseMs = 20 * 60000;
 const intervalRateMs = 1000;
 const cssClassName_Wrapper = `zoom-meeting-page-auto-closer-wrapper`;
 const cssClassName_CountdownText = `zoom-meeting-page-auto-closer-countdown-text`;
