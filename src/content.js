@@ -45,6 +45,15 @@ function getUrl() {
   return new URL(window.location.href);
 }
 
+function isWebClientLeave() {
+  const url = getUrl();
+  if (url.pathname && url.pathname.startsWith('/wc/leave')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function isPostAttendee() {
   const url = getUrl();
   if (url.pathname && url.pathname.startsWith('/postattendee')) {
@@ -68,7 +77,7 @@ function countDownToClose() {
   timeTillCloseMs -= intervalRateMs;
   log(`TimeMs left: ${timeTillCloseMs} isSuccess=${isMeetingStatusSuccess()} isPostAttendee=${isPostAttendee()}`);
 
-  if (!isMeetingStatusSuccess() && !isPostAttendee()) { return; }
+  if (!isMeetingStatusSuccess() && !isPostAttendee() && !isWebClientLeave()) { return; }
 
   countdownWithText(timeTillCloseMs);
 

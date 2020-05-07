@@ -12,4 +12,5 @@ This extension is HIPAA and GDPR compliant.
 
 ## Test Urls
 - https://zoom.us/test
-- https://zoom.us/postattendee?id=4
+- https://zoom.us/postattendee
+- https://zoom.us/wc/leave

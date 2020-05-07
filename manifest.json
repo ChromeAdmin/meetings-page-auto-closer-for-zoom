@@ -1,7 +1,7 @@
 {
   "name": "Zoom Meetings Page Auto Closer",
   "description": "Automatically closes the page used to launch Zoom meetings.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "manifest_version": 2,
   "homepage_url": "https://github.com/ChromeAdmin/zoom-meetings-page-auto-closer",
   "icons": {
@@ -20,7 +20,8 @@
       "matches": [
         "*://*.zoom.us/j/*",
         "*://*.zoom.us/s/*",
-        "*://*.zoom.us/postattendee*"
+        "*://*.zoom.us/postattendee*",
+        "*://*.zoom.us/wc/leave*"
       ],
       "js": [
         "src/content.js"

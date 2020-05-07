@@ -1,16 +1,21 @@
 .zoom-meeting-page-auto-closer-wrapper {
   position: absolute;
+  padding: 6px;
   margin: auto;
   left: 0;
   right: 0;
   /* top: 100px; */
-  top: 8px;
+  /* top: 8px; */
+  top: 0; /* Because we added padding, we need to skoot back to the top */
   z-index: 999;
   width: fit-content;
   text-align: center;
   color: #3a3c3e;
   font-size: 18px;
   font-weight: 400;
+  text-shadow: 0 0 2px white, 0 0 4px white, 0 0 6px snow, 0 0 10px snow;
+  background: hsla(0, 0%, 100%, 90%);
+  border-radius: 4px;
 }
 
 .zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-stop-link {
