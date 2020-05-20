@@ -4,7 +4,7 @@
 
 ## __We don't have any servers.__
 ## __No data leaves your computer.__
-## __We don't send any of your data to anywhere.__
+## __We don't send/transmit any data to anywhere.__
 
 - Complete Privacy
 - No ads
