@@ -1,5 +1,5 @@
 # zoom-meetings-page-auto-closer
-Automatically closes the page used to launch Zoom meetings
+Automatically closes the page used to launch Zoom meetings and restores focus to the tab you were on before zoom opened.
 
 ## Safest extension. No Permissions Needed.
 
