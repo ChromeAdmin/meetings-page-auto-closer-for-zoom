@@ -1,6 +1,6 @@
 # zoom-meetings-page-auto-closer
 
-## Privacy Policy
+# Privacy Policy
 
 ## __We don't have any servers.__
 ## __No data leaves your computer.__
