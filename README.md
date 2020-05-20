@@ -1,9 +1,9 @@
 # zoom-meetings-page-auto-closer
-Automatically closes the page used to launch Zoom meetings and restores focus to the tab you were on before zoom opened.
+Automatically closes the page used to launch Zoom meetings and restores focus to the tab you were on before Zoom opened.
 
 ## Safest extension. No Permissions Needed.
 
-Use Zoom for meetings? Then this extension will keep your Chrome running fast and smooth by automatically closing the page used to launch Zoom meetings after you've joined. 
+Use Zoom for meetings? Then this extension will keep your Chrome running fast and smooth by automatically closing the page used to launch Zoom meetings after you've joined and restoring focus to the tab you were on before zoom opened. 
 
 The most user friendly Zoom Closer you'll find in the store that uses the least permissions while giving you the ability to cancel the auto close timer. We natively blend in with the Zoom UI for a seamless experience. Auto close Zoom tab after joining the meeting.
 
