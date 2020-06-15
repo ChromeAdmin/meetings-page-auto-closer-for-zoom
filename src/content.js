@@ -68,16 +68,23 @@ function isMeetingStatusSuccess() {
   let qpStatus = url.searchParams.get('status');
   if (qpStatus === 'success') {
     return true;
-  } else {
-    return false;
+  } 
+
+  if (url.hash && url.hash.includes('success')) {
+    return true;
   }
+
+  return false;
 }
 
 function countDownToClose() {
   timeTillCloseMs -= intervalRateMs;
   log(`TimeMs left: ${timeTillCloseMs} isSuccess=${isMeetingStatusSuccess()} isPostAttendee=${isPostAttendee()}`);
 
-  if (!isMeetingStatusSuccess() && !isPostAttendee() && !isWebClientLeave()) { return; }
+  if (!isMeetingStatusSuccess() && !isPostAttendee() && !isWebClientLeave()) {
+    timeTillCloseMs += intervalRateMs; // Put back the time
+    return; 
+  }
 
   countdownWithText(timeTillCloseMs);
 
