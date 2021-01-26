@@ -11,7 +11,7 @@ Complete privacy. Contains no analytics. Zero dependencies.
 <br>[See our Privacy Policy](PRIVACY_POLICY.md)
 <br>This extension is HIPAA and GDPR compliant.
 
-[![Chrome Web Store](https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/zoom-meetings-page-auto-c/edflihlonecjkejpbajecilgmopegldj)
+[![Chrome Web Store](screenshots/chrome_web_store_button.png?raw=true "Chrome Web Store")](https://chrome.google.com/webstore/detail/zoom-meetings-page-auto-c/edflihlonecjkejpbajecilgmopegldj)
 
 [![Screenshot](screenshots/screenshot.png?raw=true "Screenshot")](https://chrome.google.com/webstore/detail/zoom-meetings-page-auto-c/edflihlonecjkejpbajecilgmopegldj)
 
