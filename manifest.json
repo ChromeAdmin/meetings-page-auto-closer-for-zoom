@@ -9,11 +9,9 @@
     "48": "icons/icon-128.png",
     "128": "icons/icon-128.png"
   },
-  "permissions": [],
+  "permissions": ["storage"],
   "background": {
-    "scripts": [
-      "src/background.js" 
-    ] 
+    "scripts": ["src/background.js"]
   },
   "content_scripts": [
     {
@@ -76,12 +74,9 @@
         "*://*.zoomgov.com/postattendee*",
         "*://*.zoomgov.com/wc/leave*"
       ],
-      "js": [
-        "src/content.js"
-      ],
-      "css": [
-        "src/content.css"
-      ]
+      "js": ["src/content.js"],
+      "css": ["src/content.css"]
     }
-  ]
+  ],
+  "options_page": "src/options.html"
 }

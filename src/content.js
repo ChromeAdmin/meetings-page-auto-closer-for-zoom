@@ -2,24 +2,34 @@ function log(text) {
   console.log(`ZMPAC: ${text}`);
 }
 
-log('loaded...');
+log("loaded...");
 
 let timeTillCloseMs = 21 * 1000;
+
+chrome.storage.sync.get("timeout", (data) => {
+  log(`Timeout from settings: ${data.timeout}`);
+  timeTillCloseMs = data.timeout * 1000;
+});
+
 const intervalRateMs = 1000;
 const cssClassName_Wrapper = `zoom-meeting-page-auto-closer-wrapper`;
 const cssClassName_CountdownText = `zoom-meeting-page-auto-closer-countdown-text`;
 const cssClassName_StopLink = `zoom-meeting-page-auto-closer-stop-link`;
 
 function countdownWithText(countdownTimeMs) {
-  if (false) {//Used for freezing the countdown to debugging styling
+  if (false) {
+    //Used for freezing the countdown to debugging styling
     countdownTimeMs = 20 * 1000;
     clearInterval(intervalId);
   }
 
-  let wrapperEl = document.documentElement.querySelector(`.${cssClassName_Wrapper}`);
+  let wrapperEl = document.documentElement.querySelector(
+    `.${cssClassName_Wrapper}`,
+  );
 
-  if (!wrapperEl) { // Lazy init the element
-    wrapperEl = document.createElement('div');
+  if (!wrapperEl) {
+    // Lazy init the element
+    wrapperEl = document.createElement("div");
     wrapperEl.classList.add(cssClassName_Wrapper);
     wrapperEl.innerHTML = `
     <div>
@@ -31,14 +41,16 @@ function countdownWithText(countdownTimeMs) {
 
     let countdownEl = wrapperEl.querySelector(`.${cssClassName_StopLink}`);
     countdownEl.onclick = () => {
-      log('Canceled the countdown');
+      log("Canceled the countdown");
       clearInterval(intervalId);
       wrapperEl.remove();
     };
   }
 
   const countdownEl = wrapperEl.querySelector(`.${cssClassName_CountdownText}`);
-  countdownEl.innerText = `Closing page in ${Math.round(countdownTimeMs / 1000)} seconds`;
+  countdownEl.innerText = `Closing page in ${Math.round(
+    countdownTimeMs / 1000,
+  )} seconds`;
 }
 
 function getUrl() {
@@ -47,7 +59,7 @@ function getUrl() {
 
 function isWebClientLeave() {
   const url = getUrl();
-  if (url.pathname && url.pathname.startsWith('/wc/leave')) {
+  if (url.pathname && url.pathname.startsWith("/wc/leave")) {
     return true;
   } else {
     return false;
@@ -56,7 +68,7 @@ function isWebClientLeave() {
 
 function isPostAttendee() {
   const url = getUrl();
-  if (url.pathname && url.pathname.startsWith('/postattendee')) {
+  if (url.pathname && url.pathname.startsWith("/postattendee")) {
     return true;
   } else {
     return false;
@@ -64,7 +76,7 @@ function isPostAttendee() {
 }
 
 function isMeetingStatusSuccess() {
-  if (window.location.href.toLowerCase().includes('success')) {
+  if (window.location.href.toLowerCase().includes("success")) {
     return true;
   }
 
@@ -72,20 +84,20 @@ function isMeetingStatusSuccess() {
 }
 
 function isPageTextLikeMeetingLaunch() {
-  const pageText = document?.body?.innerText?.toLowerCase() || '';
-  if (pageText.includes('click open zoom.')) {
+  const pageText = document?.body?.innerText?.toLowerCase() || "";
+  if (pageText.includes("click open zoom.")) {
     return true;
   }
-  if (pageText.includes('click launch meeting below')) {
+  if (pageText.includes("click launch meeting below")) {
     return true;
   }
-  if (pageText.includes('having issues with zoom')) {
+  if (pageText.includes("having issues with zoom")) {
     return true;
   }
-  if (pageText.includes('meeting has been launched')) {
+  if (pageText.includes("meeting has been launched")) {
     return true;
   }
-  if (pageText.includes('having issues with zoom')) {
+  if (pageText.includes("having issues with zoom")) {
     return true;
   }
   return false;
@@ -93,9 +105,16 @@ function isPageTextLikeMeetingLaunch() {
 
 function countDownToClose() {
   timeTillCloseMs -= intervalRateMs;
-  log(`TimeMs left: ${timeTillCloseMs} isPageText=${isPageTextLikeMeetingLaunch()} isSuccess=${isMeetingStatusSuccess()} isPostAttendee=${isPostAttendee()} isWebClientLeave=${isWebClientLeave()}`);
+  log(
+    `TimeMs left: ${timeTillCloseMs} isPageText=${isPageTextLikeMeetingLaunch()} isSuccess=${isMeetingStatusSuccess()} isPostAttendee=${isPostAttendee()} isWebClientLeave=${isWebClientLeave()}`,
+  );
 
-  if (isPageTextLikeMeetingLaunch() || isMeetingStatusSuccess() || isPostAttendee() || isWebClientLeave()) {
+  if (
+    isPageTextLikeMeetingLaunch() ||
+    isMeetingStatusSuccess() ||
+    isPostAttendee() ||
+    isWebClientLeave()
+  ) {
     log(`All checks good to auto close`);
   } else {
     timeTillCloseMs += intervalRateMs; // Put back the time
@@ -104,7 +123,9 @@ function countDownToClose() {
 
   countdownWithText(timeTillCloseMs);
 
-  if (timeTillCloseMs > 0) { return; }
+  if (timeTillCloseMs > 0) {
+    return;
+  }
 
   clearInterval(intervalId);
 
