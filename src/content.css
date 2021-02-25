@@ -1,25 +1,64 @@
 .zoom-meeting-page-auto-closer-wrapper {
   position: absolute;
-  padding: 6px;
   margin: auto;
   left: 0;
   right: 0;
   /* top: 100px; */
   /* top: 8px; */
-  top: 0; /* Because we added padding, we need to skoot back to the top */
+  top: 0;
+  /* Because we added padding, we need to skoot back to the top */
   z-index: 999;
   width: fit-content;
+}
+
+.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over {
+  padding: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
   color: #3a3c3e;
   font-size: 18px;
   font-weight: 400;
   text-shadow: 0 0 2px white, 0 0 4px white, 0 0 6px snow, 0 0 10px snow;
   background: hsla(0, 0%, 100%, 90%);
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.67);
   border-radius: 4px;
 }
 
-.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-stop-link {
+.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over .zoom-meeting-page-auto-closer-countdown-text {
+  margin-bottom: 6px;
+}
+
+.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over .zoom-meeting-page-auto-closer-stop-link {
   cursor: pointer;
   font-size: 16px;
   padding: 4px;
+}
+
+.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over .zoom-meeting-page-auto-closer-close-now-btn {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 4px;
+  font-size: 16px;
+  margin-left: 36px;
+}
+
+.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-settings-menu {
+  margin-top: 6px;
+  padding: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  color: #1e1e1f;
+  font-size: 12px;
+  font-weight: 400;
+  background: rgb(255 240 178 / 80%);
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.33);
+  border-radius: 2px;
+}
+
+.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-settings-menu .zoom-meeting-page-auto-closer-settings-option {
+  cursor: pointer;
+  font-size: 12px;
+  padding: 1px;
 }
