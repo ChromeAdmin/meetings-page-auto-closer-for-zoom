@@ -46,7 +46,7 @@ function getWrapperEl() {
 
 function countdownWithText(countdownTimeMs) {
   if (false) {//Used for freezing the countdown to debugging styling
-    countdownTimeMs = 20 * 1000;
+    countdownTimeMs = getCountdownStartTimeMs();
     clearInterval(intervalId);
   }
 
@@ -89,7 +89,7 @@ function injectAndUpdateSettingsMenu() {
   const optionsList = [];
   const decrementValSec = trueCountdownStartTimeSec - incrementalSec;
   const incrementValSec = trueCountdownStartTimeSec + incrementalSec;
-  if (decrementValSec * 1000 > minCountdownStartTimeMs) {
+  if (decrementValSec * 1000 >= minCountdownStartTimeMs) {
     optionsList.push(decrementValSec);
   }
   if (incrementValSec * 1000 < maxCountdownStartTimeMs) {
