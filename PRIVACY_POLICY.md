@@ -1,5 +1,5 @@
-# [meetings-page-auto-closer-for-zoom](TODO://PutChromeWebstoreLinkHere)
-
+# meetings-page-auto-closer-for-zoom
+<!-- TODO://PutChromeWebstoreLinkHere and make ^ clickable -->
 # Privacy Policy
 
 ## - __We don't have any servers.__

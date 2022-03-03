@@ -1,5 +1,4 @@
 # meetings-page-auto-closer-for-zoom
-( formerly known as [Zoom Meetings Page Auto Closer](https://github.com/ChromeAdmin/zoom-meetings-page-auto-closer) )
 
 Automatically closes the page used to launch Zoom meetings and restores focus to the tab you were on beforehand. Supports pages launched by Zoom and ZoomGov.
 
@@ -13,12 +12,17 @@ Complete privacy. Contains no analytics. Zero dependencies.
 <br>[See our Privacy Policy](PRIVACY_POLICY.md)
 <br>This extension is HIPAA and GDPR compliant.
 
-[![Chrome Web Store](screenshots/chrome_web_store_button.png?raw=true "Chrome Web Store")](TODO://PutChromeWebstoreLinkHere)
+<!-- [![Chrome Web Store](screenshots/chrome_web_store_button.png?raw=true "Chrome Web Store")](TODO://PutChromeWebstoreLinkHere) -->
 
-[![Screenshot](screenshots/screenshot.png?raw=true "Screenshot")](TODO://PutChromeWebstoreLinkHere)
+<!-- [![Screenshot](screenshots/screenshot.png?raw=true "Screenshot")](TODO://PutChromeWebstoreLinkHere) -->
 
 
 ## Test Urls
 - https://zoom.us/test
 - https://zoom.us/postattendee
 - https://zoom.us/wc/leave
+
+## Notices
+This extension is not affliated, authorized by, endorsed by, or produced by Zoom Video Communications.
+ZOOM is a trademark of Zoom Video Communications, Inc. 
+All other trademarks are the property of their respective holders.
