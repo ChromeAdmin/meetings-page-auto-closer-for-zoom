@@ -1,4 +1,4 @@
-.zoom-meeting-page-auto-closer-wrapper {
+.meetings-page-auto-closer-for-zoom-wrapper {
   position: absolute;
   margin: auto;
   left: 0;
@@ -11,7 +11,7 @@
   width: fit-content;
 }
 
-.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over {
+.meetings-page-auto-closer-for-zoom-wrapper .meetings-page-auto-closer-for-zoom-main-pop-over {
   padding: 6px;
   padding-left: 10px;
   padding-right: 10px;
@@ -25,17 +25,17 @@
   border-radius: 4px;
 }
 
-.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over .zoom-meeting-page-auto-closer-countdown-text {
+.meetings-page-auto-closer-for-zoom-wrapper .meetings-page-auto-closer-for-zoom-main-pop-over .meetings-page-auto-closer-for-zoom-countdown-text {
   margin-bottom: 6px;
 }
 
-.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over .zoom-meeting-page-auto-closer-stop-link {
+.meetings-page-auto-closer-for-zoom-wrapper .meetings-page-auto-closer-for-zoom-main-pop-over .meetings-page-auto-closer-for-zoom-stop-link {
   cursor: pointer;
   font-size: 16px;
   padding: 4px;
 }
 
-.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-main-pop-over .zoom-meeting-page-auto-closer-close-now-btn {
+.meetings-page-auto-closer-for-zoom-wrapper .meetings-page-auto-closer-for-zoom-main-pop-over .meetings-page-auto-closer-for-zoom-close-now-btn {
   cursor: pointer;
   font-weight: bold;
   padding: 4px;
@@ -43,7 +43,7 @@
   margin-left: 36px;
 }
 
-.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-settings-menu {
+.meetings-page-auto-closer-for-zoom-wrapper .meetings-page-auto-closer-for-zoom-settings-menu {
   margin-top: 6px;
   padding: 6px;
   padding-left: 10px;
@@ -57,7 +57,7 @@
   border-radius: 2px;
 }
 
-.zoom-meeting-page-auto-closer-wrapper .zoom-meeting-page-auto-closer-settings-menu .zoom-meeting-page-auto-closer-settings-option {
+.meetings-page-auto-closer-for-zoom-wrapper .meetings-page-auto-closer-for-zoom-settings-menu .meetings-page-auto-closer-for-zoom-settings-option {
   cursor: pointer;
   font-size: 12px;
   padding: 1px;

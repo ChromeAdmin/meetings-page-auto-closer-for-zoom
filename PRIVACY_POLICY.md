@@ -1,4 +1,4 @@
-# [zoom-meetings-page-auto-closer](https://chrome.google.com/webstore/detail/zoom-meetings-page-auto-c/edflihlonecjkejpbajecilgmopegldj)
+# [meetings-page-auto-closer-for-zoom](TODO://PutChromeWebstoreLinkHere)
 
 # Privacy Policy
 
