@@ -1,5 +1,5 @@
-# [zoom-meetings-page-auto-closer](https://chrome.google.com/webstore/detail/zoom-meetings-page-auto-c/edflihlonecjkejpbajecilgmopegldj)
-
+# meetings-page-auto-closer-for-zoom
+<!-- TODO://PutChromeWebstoreLinkHere and make ^ clickable -->
 # Privacy Policy
 
 ## - __We don't have any servers.__
