@@ -14,7 +14,7 @@ const cssClassName_SettingsOption = `meetings-page-auto-closer-for-zoom-settings
 const localStorageKey_CountdownStartTimeMs = `b9d55053-5a15-4b65-98ce-73711e1d83f9`;
 
 function log(text) {
-  console.log(`ZMPAC: ${text}`);
+  console.log(`MPACFZ: ${text}`);
 }
 
 log('loaded...');
