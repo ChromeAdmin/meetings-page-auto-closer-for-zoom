@@ -24,5 +24,5 @@ Complete privacy. Contains no analytics. Zero dependencies.
 
 ## Notices
 This extension is not affliated, authorized by, endorsed by, or produced by Zoom Video Communications.
-ZOOM is a trademark of Zoom Video Communications, Inc. 
-All other trademarks are the property of their respective holders.
+<br/>ZOOM is a trademark of Zoom Video Communications, Inc.
+<br/>All other trademarks are the property of their respective holders.
