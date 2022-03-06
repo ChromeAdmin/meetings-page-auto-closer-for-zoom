@@ -2,7 +2,7 @@
   "name": "Meetings Page Auto Closer for Zoom",
   "description": "Automatically closes the page opened by Zoom to launch meetings and restores focus to the tab you were on before opened.",
   "version": "0.3.1",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "homepage_url": "https://github.com/ChromeAdmin/meetings-page-auto-closer-for-zoom",
   "icons": {
     "16": "icons/icon-128.png",
@@ -11,7 +11,9 @@
   },
   "permissions": [],
   "background": {
-    "service_worker": "src/background.js"
+    "scripts": [
+      "src/background.js"
+    ]
   },
   "content_scripts": [
     {
