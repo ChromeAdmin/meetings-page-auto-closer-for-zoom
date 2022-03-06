@@ -17,7 +17,7 @@ Privacy Policy:
 https://github.com/ChromeAdmin/meetings-page-auto-closer-for-zoom/blob/master/PRIVACY_POLICY.md
 
 Notices:
-This extension is not affliated, authorized by, endorsed by, or produced by Zoom Video Communications.
+This extension is not affiliated, authorized by, endorsed by, or produced by Zoom Video Communications.
 ZOOM is a trademark of Zoom Video Communications, Inc.
 All other trademarks are the property of their respective holders.
 
