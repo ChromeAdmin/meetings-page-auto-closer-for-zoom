@@ -14,7 +14,7 @@ Complete privacy. Contains no analytics. Zero dependencies.
 
 [![Chrome Web Store](screenshots/chrome_web_store_button.png?raw=true "Chrome Web Store")](https://chrome.google.com/webstore/detail/meetings-page-auto-closer/pbgidoglkjhfgjhalbbiiahdlokjcplb)
 
-[![Screenshot](screenshots/screenshot.png?raw=true "Screenshot")](https://chrome.google.com/webstore/detail/meetings-page-auto-closer/pbgidoglkjhfgjhalbbiiahdlokjcplb)
+[![Screenshot](screenshots/screenshot-new.png?raw=true "Screenshot")](https://chrome.google.com/webstore/detail/meetings-page-auto-closer/pbgidoglkjhfgjhalbbiiahdlokjcplb)
 
 
 ## Test Urls
