@@ -1,6 +1,6 @@
 # meetings-page-auto-closer-for-zoom
 
-Automatically closes the page used to launch Zoom meetings and restores focus to the tab you were on beforehand. Supports pages launched by Zoom and ZoomGov.
+Automatically closes the page used to launch Zoom meetings and restores focus to the tab you were on beforehand. Supports pages launched by Zoom and ZoomGov. Easily change the countdown time by clicking one of the offered alternate times in blue.
 
 ## Safest extension. No Permissions Needed.
 
