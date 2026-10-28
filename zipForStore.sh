@@ -1,3 +1,3 @@
 #!/bin/bash
 rm store.zip
-zip -R store.zip 'src/*' 'icons/*' 'manifest.json' 'LICENSE' 'README.md'
+zip -r store.zip src icons manifest.json LICENSE README.md

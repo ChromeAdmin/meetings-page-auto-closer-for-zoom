@@ -1,0 +1,7 @@
+{
+  "name": "meetings-page-auto-closer-for-zoom",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  }
+}

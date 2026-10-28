@@ -1,59 +1,47 @@
-// Background script
-const windowToLastActiveTabIdsMap = {}
+importScripts('lib/tab-history.js');
 
-function getLastActiveTabIdsListForWindowId(windowId) {
-  if (!windowToLastActiveTabIdsMap[`wId-${windowId}`]) {
-    windowToLastActiveTabIdsMap[`wId-${windowId}`] = [];
-  }
-  return windowToLastActiveTabIdsMap[`wId-${windowId}`];
+const TAB_HISTORY_STORAGE_KEY = 'windowToLastActiveTabIdsMap';
+
+function sessionTabStorage() {
+  return {
+    async read() {
+      const stored = await chrome.storage.session.get(TAB_HISTORY_STORAGE_KEY);
+      return stored[TAB_HISTORY_STORAGE_KEY] || {};
+    },
+    async write(map) {
+      await chrome.storage.session.set({ [TAB_HISTORY_STORAGE_KEY]: map });
+    },
+  };
 }
 
-function addTabToWindowMap(windowId, tabId) {
-  const lastActiveTabIdsList = getLastActiveTabIdsListForWindowId(windowId);
-  //Remove the tabId from the last active if it exists
-  const index = lastActiveTabIdsList.indexOf(tabId);
-  if (index > -1) {
-    lastActiveTabIdsList.splice(index, 1);
-  }
-  //Insert the tabId at the end
-  lastActiveTabIdsList.push(tabId);
+const tabStorage = sessionTabStorage();
+let chain = Promise.resolve();
 
-  //If we've gone over our self-imposed size then delete the oldest added tabId
-  if (lastActiveTabIdsList.length > 5) {
-    lastActiveTabIdsList.shift();
-  }
+function enqueue(task) {
+  const run = chain.then(task);
+  chain = run.then(() => undefined, (error) => {
+    console.log(`MPACFZ: ${error}`);
+  });
+  return run;
 }
-
-function focusTab(tabId) {
-  const updateProperties = { active: true };
-  chrome.tabs.update(tabId, updateProperties, (tab) => { });
-}
-
 
 chrome.tabs.onActivated.addListener((activeInfo) => {
-  // console.log(`windowId: ${activeInfo.windowId} tabId:${activeInfo.tabId}`);
-  addTabToWindowMap(activeInfo.windowId, activeInfo.tabId);
+  return enqueue(() => TabHistory.rememberActiveTab(tabStorage, activeInfo.windowId, activeInfo.tabId));
 });
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (!message.pleaseCloseThisTab) { return; }
+chrome.runtime.onMessage.addListener((message, sender) => {
+  if (!message || !message.pleaseCloseThisTab || !sender.tab) {
+    return;
+  }
 
   const windowId = sender.tab.windowId;
   const tabId = sender.tab.id;
-  const lastActiveTabIdsList = getLastActiveTabIdsListForWindowId(windowId);
-  if (lastActiveTabIdsList.length >= 2) { //There need to be at least 2 tabs in our window's history
-    const lastActiveTabId = lastActiveTabIdsList[lastActiveTabIdsList.length - 1];
-    const activeBeforeLastTabId = lastActiveTabIdsList[lastActiveTabIdsList.length - 2];
-    if (tabId === lastActiveTabId) {
-      // This is a case where the zoom tab we are about to close 
-      // is the lastActiveTabId for this window. So we will change
-      // the focus to the tab previously active in this window.
-      focusTab(activeBeforeLastTabId);
+  return enqueue(async () => {
+    const result = await TabHistory.closeRequestingTab(chrome.tabs, tabStorage, windowId, tabId);
+    if (result.focused) {
       console.log('MPACFZ: Recovered the active tab before zoom.');
     }
-  }
-  
-  chrome.tabs.remove(tabId);
+  });
 });
 
-console.log(`MPACFZ: meetings-page-auto-closer-for-zoom loaded.`)
+console.log('MPACFZ: meetings-page-auto-closer-for-zoom loaded.');

@@ -11,6 +11,9 @@
 # So how does it work?
 ## All the data is securely processed inside the browser in an _[Isolated World](https://developer.chrome.com/extensions/content_scripts#isolated_world)_. With no data being transmitted outside the browser.
 
+The extension stores ids of recently active tabs in Chrome session storage so it can restore focus.
+Those ids stay on this computer and are cleared when the browser closes.
+
 <br>
 
 ### So, in other words

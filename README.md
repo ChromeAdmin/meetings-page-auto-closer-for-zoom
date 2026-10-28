@@ -2,7 +2,11 @@
 
 Automatically closes the page used to launch Zoom meetings and restores focus to the tab you were on beforehand. Supports pages launched by Zoom and ZoomGov. Easily change the countdown time by clicking one of the offered alternate times in blue.
 
-## Safest extension. No Permissions Needed.
+## Storage permission
+
+The only permission is `storage`.
+It remembers the tab you were on so focus can be restored after Chrome suspends the extension.
+That list stays in session storage on this computer and is cleared when the browser closes.
 
 Use Zoom for meetings? Then this extension will keep your Chrome running fast and smooth by automatically closing the page used to launch Zoom meetings after you've joined and restoring focus to the tab you were on beforehand. 
 
@@ -18,7 +22,12 @@ Complete privacy. Contains no analytics. Zero dependencies.
 
 
 ## Test Urls
-- https://zoom.us/test
+
+These URLs match the extension and start the countdown.
+A join link does so when `status=success` or the hash is `#success`.
+
+- https://zoom.us/j/123456789?status=success
+- https://zoom.us/j/123456789#success
 - https://zoom.us/postattendee
 - https://zoom.us/wc/leave
 

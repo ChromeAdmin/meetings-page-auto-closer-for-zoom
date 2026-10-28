@@ -9,7 +9,7 @@
     "48": "icons/icon-128.png",
     "128": "icons/icon-128.png"
   },
-  "permissions": [],
+  "permissions": ["storage"],
   "background": {
     "service_worker": "src/background.js"
   },
@@ -75,6 +75,7 @@
         "*://*.zoomgov.com/wc/leave*"
       ],
       "js": [
+        "src/lib/close-rules.js",
         "src/content.js"
       ],
       "css": [
